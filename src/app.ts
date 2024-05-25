@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express, { Request, Response } from "express";
+import express from "express";
 import cors from "cors";
 import morgan from "morgan";
 import { dataSource } from "./config/db.connection";
@@ -23,5 +23,4 @@ app.use("/", routes);
 const port = process.env.PORT || 3000;
 app.listen(port, ()=> {
     console.log(`server is listening at port ${port}`);
-    
 });
