@@ -7,8 +7,8 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "dev": "npm run build && concurrently \"npm run build:watch\" \"npm run serve:watch\"",
-    "serve": "node dist/app.js",
-    "serve:watch": "nodemon dist/app.js"
+    "serve": "node dist/server.js",
+    "serve:watch": "nodemon dist/server.js"
   },
   "dependencies": {
     "class-validator": "^0.14.1",
