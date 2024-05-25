@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "dev": "npm run build && concurrently \"npm run build:watch\" \"npm run serve:watch\"",
+    "dev": "yarn run build && concurrently \"yarn run build:watch\" \"yarn run serve:watch\"",
     "serve": "node dist/server.js",
     "serve:watch": "nodemon dist/server.js"
   },
