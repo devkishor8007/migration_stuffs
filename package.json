@@ -8,7 +8,12 @@
     "build:watch": "tsc -w",
     "dev": "yarn run build && concurrently \"yarn run build:watch\" \"yarn run serve:watch\"",
     "serve": "node dist/server.js",
-    "serve:watch": "nodemon dist/server.js"
+    "serve:watch": "nodemon dist/server.js",
+    "typeorm": "typeorm-ts-node-esm",
+    "typeorm:generate": "npx typeorm-ts-node-commonjs migration:generate -d src/config/db.source.ts",
+    "typeorm:migrate": "npx typeorm-ts-node-commonjs migration:run -d src/db/dataSourceLocal.ts",
+    "typeorm:revert": "npx typeorm-ts-node-commonjs migration:revert -d src/db/dataSourceLocal.ts",
+    "typeorm:drop": "npx typeorm-ts-node-commonjs schema:drop -d src/db/dataSourceLocal.ts"
   },
   "dependencies": {
     "class-validator": "^0.14.1",
@@ -26,6 +31,7 @@
     "@types/morgan": "^1.9.9",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   }
 }
