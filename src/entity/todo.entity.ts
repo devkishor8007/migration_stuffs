@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
@@ -10,7 +11,7 @@ import { TodoStatus } from "./enum";
 @Entity({
     name: 'todo'
 })
-export class Todo {
+export class Todo extends BaseEntity {
   @PrimaryGeneratedColumn("uuid")
   id!: string;
 
